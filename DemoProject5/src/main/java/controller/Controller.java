@@ -2,6 +2,9 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import model.MonitoredDataManager;
 import view.View;
@@ -46,7 +49,7 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String result = manager.textForOccurencesPerActivity();
-				manager.writeStringToFile(result, TOTAL_OCCUR_FILE);
+				writeStringToFile(result, TOTAL_OCCUR_FILE);
 				view.setResultsText(result);
 			}
 		});
@@ -54,7 +57,7 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String result = manager.textForDailyOccurencesPerActivity();
-				manager.writeStringToFile(result, DAILY_OCCUR_FILE);
+				writeStringToFile(result, DAILY_OCCUR_FILE);
 				view.setResultsText(result);
 			}
 		});
@@ -62,7 +65,7 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String result = manager.textForTotalDurationFiltered();
-				manager.writeStringToFile(result, LONG_DURATION_FILE);
+				writeStringToFile(result, LONG_DURATION_FILE);
 				view.setResultsText(result);
 			}
 		});
@@ -70,9 +73,23 @@ public class Controller {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String result = manager.textForSelectShortActivityNames();
-				manager.writeStringToFile(result, SHORT_ACTIONS_FILE);
+				writeStringToFile(result, SHORT_ACTIONS_FILE);
 				view.setResultsText(result);
 			}
 		});
+	}
+	
+	/**
+	 * Writes the given string into the file given, overwriting it.
+	 * @param string - the string to be written.
+	 * @param filename - the file to write to.
+	 */
+	private void writeStringToFile(String string, String filename) {
+		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename));) {
+			writer.write(string);
+		}
+		catch (IOException e) {
+			e.printStackTrace(); //TODO: actually handle exceptions, rather than simply crashing!
+		}
 	}
 }

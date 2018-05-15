@@ -193,18 +193,4 @@ public class MonitoredDataManager {
 		
 		return output.toString();
 	}
-	
-	/**
-	 * Writes the given string into the file given, overwriting it.
-	 * @param string - the string to be written.
-	 * @param filename - the file to write to.
-	 */
-	public void writeStringToFile(String string, String filename) {
-		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename));) {
-			writer.write(string);
-		}
-		catch (IOException e) {
-			e.printStackTrace(); //TODO: actually handle exceptions, rather than simply crashing!
-		}
-	}
 }
