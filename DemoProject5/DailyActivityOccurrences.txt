@@ -1,0 +1,139 @@
+In day 332 we have:
+Breakfast appears 1 times.
+Grooming appears 2 times.
+Toileting appears 3 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 4 times.
+Snack appears 1 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 333 we have:
+Breakfast appears 1 times.
+Grooming appears 3 times.
+Toileting appears 4 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 6 times.
+Snack appears 1 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 334 we have:
+Breakfast appears 1 times.
+Grooming appears 2 times.
+Toileting appears 6 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 8 times.
+Snack appears 2 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 335 we have:
+Breakfast appears 1 times.
+Toileting appears 2 times.
+Grooming appears 3 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 6 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 336 we have:
+Breakfast appears 1 times.
+Toileting appears 3 times.
+Grooming appears 4 times.
+Sleeping appears 1 times.
+Spare_Time/TV appears 7 times.
+Snack appears 1 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 337 we have:
+Breakfast appears 1 times.
+Grooming appears 3 times.
+Toileting appears 2 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 4 times.
+Showering appears 1 times.
+
+In day 338 we have:
+Breakfast appears 1 times.
+Grooming appears 2 times.
+Toileting appears 4 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 6 times.
+Snack appears 2 times.
+Showering appears 1 times.
+
+In day 339 we have:
+Breakfast appears 1 times.
+Toileting appears 5 times.
+Grooming appears 6 times.
+Sleeping appears 1 times.
+Leaving appears 2 times.
+Spare_Time/TV appears 7 times.
+Snack appears 1 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 340 we have:
+Breakfast appears 1 times.
+Grooming appears 4 times.
+Toileting appears 3 times.
+Sleeping appears 1 times.
+Spare_Time/TV appears 5 times.
+Snack appears 1 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 341 we have:
+Breakfast appears 1 times.
+Toileting appears 6 times.
+Grooming appears 5 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 8 times.
+Snack appears 2 times.
+Showering appears 1 times.
+Lunch appears 1 times.
+
+In day 342 we have:
+Breakfast appears 1 times.
+Toileting appears 1 times.
+Grooming appears 5 times.
+Sleeping appears 1 times.
+Leaving appears 1 times.
+Spare_Time/TV appears 4 times.
+Showering appears 1 times.
+
+In day 343 we have:
+Breakfast appears 1 times.
+Toileting appears 2 times.
+Grooming appears 5 times.
+Sleeping appears 1 times.
+Leaving appears 2 times.
+Spare_Time/TV appears 6 times.
+Showering appears 1 times.
+
+In day 344 we have:
+Breakfast appears 1 times.
+Toileting appears 1 times.
+Grooming appears 4 times.
+Sleeping appears 1 times.
+Leaving appears 2 times.
+Spare_Time/TV appears 3 times.
+Showering appears 1 times.
+
+In day 345 we have:
+Breakfast appears 1 times.
+Toileting appears 2 times.
+Grooming appears 3 times.
+Sleeping appears 1 times.
+Spare_Time/TV appears 3 times.
+Showering appears 1 times.
+Lunch appears 1 times.

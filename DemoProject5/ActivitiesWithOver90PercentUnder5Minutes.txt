@@ -1,0 +1,2 @@
+Activities with 90% of instances below 5 minutes:
+- Snack
