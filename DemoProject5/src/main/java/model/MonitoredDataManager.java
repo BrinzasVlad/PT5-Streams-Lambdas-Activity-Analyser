@@ -1,7 +1,5 @@
 package model;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -74,7 +72,7 @@ public class MonitoredDataManager {
 	 * Presents the results of countOccurencesPerActivity() in an easily-printable String format
 	 * @return A string representing the results
 	 */
-	public String textForOccurencesPerActivity() {
+	public String textForOccurrencesPerActivity() {
 		Map<String, Integer> map = countOccurencesPerActivity();
 		StringBuilder output = new StringBuilder();
 		
@@ -107,7 +105,7 @@ public class MonitoredDataManager {
 	 * in an easily-printable String format
 	 * @return A string representing the results
 	 */
-	public String textForDailyOccurencesPerActivity() {
+	public String textForDailyOccurrencesPerActivity() {
 		Map<Integer, Map<String, Integer>> map = countDailyOccurrencesPerActivity();
 		StringBuilder output = new StringBuilder();
 		
@@ -122,36 +120,48 @@ public class MonitoredDataManager {
 	}
 	
 	/**
-	 * Computes the total duration across all days for each activity,
-	 * filtering out activities that have less than 10 hours total duration.
+	 * For each MonitoredData instance, computes the duration.
+	 * Then, returns a string that contains all the activities, but also
+	 * displays the above-mentioned durations.
+	 * @return A string representing the results.
+	 */
+	public String textForLinesWithDuration() {
+		StringBuilder output = new StringBuilder();
+		
+		activities.forEach(act -> {
+			output.append(act.toString());
+			output.append("        duration: ");
+			output.append(durationToDaysHoursMinutesSeconds(act.getDuration()));
+			output.append("\n");
+		});
+		
+		return output.toString();
+	}
+	
+	/**
+	 * Computes the total duration across all days for each activity.
 	 * @return A map of names to durations.
 	 */
-	public Map<String, Duration> totalDurationFiltered() {
+	public Map<String, Duration> totalDuration() {
 		return activities.stream()
 		.collect(
 				Collectors.toMap(MonitoredData::getName,
 								MonitoredData::getDuration,
 								Duration::plus)
-		) //Map it once and then re-stream it and work with that
-		.entrySet().stream()
-		.filter(x -> {return !x.getValue().minusHours(10).isNegative();}) //Keep only total duration > 10h
-		.collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
+		);
 	}
 	
 	/**
-	 * Presents the results of totalDurationFiltered() in an easily-printable String format.
+	 * Presents the results of totalDuration() in an easily-printable String format.
 	 * @return A string representing the results.
 	 */
 	public String textForTotalDurationFiltered() {
-		Map<String, Duration> map = totalDurationFiltered();
+		Map<String, Duration> map = totalDuration();
 		StringBuilder output = new StringBuilder();
 		
 		map.forEach((str, dur) -> {
 			output.append(str + " total duration: ");
-			output.append( dur.toDays() + " days, " );
-			output.append( (dur.toHours() % 24) + " hours, " );
-			output.append( (dur.toMinutes() % 60) + " minutes, " );
-			output.append( (dur.getSeconds() % 60) + " seconds.");
+			output.append(durationToDaysHoursMinutesSeconds(dur));
 			output.append("\n");
 		});
 		
@@ -192,5 +202,26 @@ public class MonitoredDataManager {
 		list.forEach(str -> output.append("- " + str + "\n"));
 		
 		return output.toString();
+	}
+	
+	/**
+	 * Converts a Duration object to a human-readable format that
+	 * shows the time elapsed in days - hours - minutes - seconds.
+	 * <br>
+	 * Output will omit days if the duration is less than one day,
+	 * will omit hours if the duration is less than one hour and will
+	 * omit minutes is the duration is less than one minute.
+	 * @param d - the Duration to convert
+	 * @return A String representation of the given Duration object
+	 */
+	private String durationToDaysHoursMinutesSeconds(Duration d) {
+		StringBuilder result = new StringBuilder();
+		
+		if(d.toDays() > 0) result.append( d.toDays() + " days, " );
+		if(d.toHours() > 0) result.append( (d.toHours() % 24) + " hours, " );
+		if(d.toMinutes() > 0) result.append( (d.toMinutes() % 60) + " minutes, " );
+		result.append( (d.getSeconds() % 60) + " seconds.");
+		
+		return result.toString();
 	}
 }

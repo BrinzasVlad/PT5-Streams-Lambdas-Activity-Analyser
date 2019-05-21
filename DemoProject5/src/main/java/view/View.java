@@ -20,7 +20,8 @@ public class View {
 	private JButton btnDistinctDays;
 	private JButton btnTotalOccurrences;
 	private JButton btnDailyOccurrences;
-	private JButton btnLongTotalTime;
+	private JButton btnTotalTime;
+	private JButton btnActivityDurations;
 	private JButton btnShortInstances;
 	
 	private JTextArea labelResult; //We use a JTextArea as a label, simply because it works.
@@ -49,8 +50,10 @@ public class View {
 		buttonsPanel.add(btnTotalOccurrences);
 		btnDailyOccurrences = new JButton("Daily Activities");
 		buttonsPanel.add(btnDailyOccurrences);
-		btnLongTotalTime = new JButton("Long Total Times");
-		buttonsPanel.add(btnLongTotalTime);
+		btnActivityDurations = new JButton("Activity Durations");
+		buttonsPanel.add(btnActivityDurations);
+		btnTotalTime = new JButton("Total Times");
+		buttonsPanel.add(btnTotalTime);
 		btnShortInstances = new JButton("Short Instances");
 		buttonsPanel.add(btnShortInstances);
 		
@@ -85,7 +88,8 @@ public class View {
 	public void addListenerDistinctDays(ActionListener e) {btnDistinctDays.addActionListener(e);}
 	public void addListenerTotalOccurrences(ActionListener e) {btnTotalOccurrences.addActionListener(e);}
 	public void addListenerDailyOccurrences(ActionListener e) {btnDailyOccurrences.addActionListener(e);}
-	public void addListenerLongTotalTime(ActionListener e) {btnLongTotalTime.addActionListener(e);}
+	public void addListenerTotalTime(ActionListener e) {btnTotalTime.addActionListener(e);}
+	public void addListenerActivityDurations(ActionListener e) {btnActivityDurations.addActionListener(e);}
 	public void addListenerShortInstances(ActionListener e) {btnShortInstances.addActionListener(e);}
 
 	/**
